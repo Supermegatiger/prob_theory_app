@@ -7,7 +7,8 @@ void main() async {
   if (Platform.isWindows) {
     WidgetsFlutterBinding.ensureInitialized();
     await windowManager.ensureInitialized();
-    WindowManager.instance.setMinimumSize(const Size(600, 800));
+    WindowManager.instance.setTitle('Генератор тестов');
+    WindowManager.instance.setMinimumSize(const Size(800, 800));
   }
   runApp(const MyApp());
 }
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Генератор тестов',
       themeMode: ThemeMode.system,
       theme: ThemeData(
         colorScheme: ColorScheme.light(
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const ParamsPage(title: 'Generator'),
+      home: const ParamsPage(title: 'Test Generator'),
     );
   }
 }
